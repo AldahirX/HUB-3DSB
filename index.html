@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUB 3DS "B" · Portal de Repaso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="tag-inst">INDEL · 3.º Desarrollo de Software "B"</p>
+      <h1>HUB de Repaso 2026</h1>
+      <p class="lead">Portal académico con el mapa de módulos, evidencias y herramientas del año.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="seccion">
+      <h2>Módulos del Año</h2>
+      <div id="contenedor-modulos" class="grid-modulos">
+        <!-- Se pinta automáticamente desde JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Desarrollado para el repaso integral 3DS·B · 2026</p>
+    </div>
+  </footer>
+
+  <script src="data/modulos.js"></script>
+  <script>
+    const contenedor = document.getElementById('contenedor-modulos');
+    
+    modulos.forEach(mod => {
+      const card = document.createElement('article');
+      card.className = 'card-modulo';
+      card.innerHTML = `
+        <span class="badge">${mod.codigo}</span>
+        <h3>${mod.nombre}</h3>
+        <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
+        <p class="desc">${mod.descripcion}</p>
+      `;
+      contenedor.appendChild(card);
+    });
+  </script>
+</body>
+</html>
