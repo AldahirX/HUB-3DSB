@@ -12,40 +12,163 @@
     <div class="wrap">
       <p class="tag-inst">INDEL · 3.º Desarrollo de Software "B"</p>
       <h1>HUB de Repaso 2026</h1>
-      <p class="lead">Portal académico con el mapa de módulos, evidencias y herramientas del año.</p>
+      <p class="lead">Portal académico con el mapa de módulos, evidencias e instrumentos del año.</p>
     </div>
   </header>
 
   <main class="wrap">
     <section class="seccion">
       <h2>Módulos del Año</h2>
+
+      <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+      <div class="filtros-bar">
+        <input type="text" id="input-busqueda" placeholder="🔍 Buscar por nombre de módulo, código o tecnología..." />
+        <div class="filtros-chips">
+          <button class="chip active" data-filtro="todos">Todos los docentes</button>
+          <button class="chip" data-filtro="Javier">Prof. Javier Mineros</button>
+          <button class="chip" data-filtro="Arcides">Prof. Arcides Canales</button>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE TARJETAS -->
       <div id="contenedor-modulos" class="grid-modulos">
-        <!-- Se pinta automáticamente desde JS -->
+        <!-- Se genera dinámicamente desde JS -->
       </div>
     </section>
   </main>
 
+  <!-- Ventana Modal de Ficha Interactiva -->
+  <dialog id="modal-modulo" class="modal">
+    <div class="modal-content">
+      <button class="btn-cerrar" id="btn-cerrar-modal" aria-label="Cerrar modal">&times;</button>
+      <div id="modal-body">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <div class="wrap">
-      <p>Desarrollado para el repaso integral 3DS·B · 2026</p>
+      <p>Desarrollado para el repaso integral 3DS·B · Versión v0.4</p>
     </div>
   </footer>
 
   <script src="data/modulos.js"></script>
   <script>
     const contenedor = document.getElementById('contenedor-modulos');
+    const inputBusqueda = document.getElementById('input-busqueda');
+    const botonesFiltro = document.querySelectorAll('.chip');
     
-    modulos.forEach(mod => {
-      const card = document.createElement('article');
-      card.className = 'card-modulo';
-      card.innerHTML = `
-        <span class="badge">${mod.codigo}</span>
-        <h3>${mod.nombre}</h3>
-        <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
-        <p class="desc">${mod.descripcion}</p>
-      `;
-      contenedor.appendChild(card);
+    const modal = document.getElementById('modal-modulo');
+    const modalBody = document.getElementById('modal-body');
+    const btnCerrar = document.getElementById('btn-cerrar-modal');
+
+    let filtroDocente = 'todos';
+    let textoBusqueda = '';
+
+    // Función principal para renderizar y filtrar
+    function renderizarModulos() {
+      contenedor.innerHTML = '';
+      
+      const filtrados = modulos.filter(mod => {
+        const coincideDocente = filtroDocente === 'todos' || mod.docente.toLowerCase().includes(filtroDocente.toLowerCase());
+        const coincideTexto = mod.nombre.toLowerCase().includes(textoBusqueda) ||
+                              mod.codigo.toLowerCase().includes(textoBusqueda) ||
+                              mod.descripcion.toLowerCase().includes(textoBusqueda) ||
+                              mod.docente.toLowerCase().includes(textoBusqueda);
+        return coincideDocente && coincideTexto;
+      });
+
+      if (filtrados.length === 0) {
+        contenedor.innerHTML = `<p class="sin-resultados">No se encontraron módulos que coincidan con la búsqueda.</p>`;
+        return;
+      }
+
+      filtrados.forEach(mod => {
+        const card = document.createElement('article');
+        card.className = 'card-modulo';
+        card.style.cursor = 'pointer';
+        card.onclick = () => abrirModal(mod.id);
+        
+        card.innerHTML = `
+          <span class="badge">${mod.codigo}</span>
+          <h3>${mod.nombre}</h3>
+          <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
+          <p class="desc">${mod.descripcion}</p>
+          <span class="btn-ver-ficha">Ver Ficha Completa &rarr;</span>
+        `;
+        contenedor.appendChild(card);
+      });
+    }
+
+    // Escuchar la barra de búsqueda en tiempo real
+    inputBusqueda.addEventListener('input', (e) => {
+      textoBusqueda = e.target.value.toLowerCase().trim();
+      renderizarModulos();
     });
+
+    // Escuchar los botones de filtro por docente
+    botonesFiltro.forEach(btn => {
+      btn.addEventListener('click', () => {
+        botonesFiltro.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filtroDocente = btn.getAttribute('data-filtro');
+        renderizarModulos();
+      });
+    });
+
+    // Abrir Modal
+    function abrirModal(id) {
+      const mod = modulos.find(m => m.id === id);
+      if (!mod) return;
+
+      modalBody.innerHTML = `
+        <div class="modal-header">
+          <span class="badge">${mod.codigo}</span>
+          <h2>${mod.nombre}</h2>
+          <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
+        </div>
+        <div class="modal-section">
+          <h4>Resumen de lo Aprendido</h4>
+          <p>${mod.resumen}</p>
+        </div>
+        <div class="modal-grid">
+          <div class="modal-box">
+            <h4>📋 Instrumentos Evaluativos</h4>
+            <ul>${mod.instrumentos.map(i => `<li>${i}</li>`).join('')}</ul>
+          </div>
+          <div class="modal-box">
+            <h4>💻 Programas e Instalables</h4>
+            <ul>${mod.programas.map(p => `<li>${p}</li>`).join('')}</ul>
+          </div>
+          <div class="modal-box">
+            <h4>🛠️ Herramientas y Lenguajes</h4>
+            <ul>${mod.herramientas.map(h => `<li>${h}</li>`).join('')}</ul>
+          </div>
+          <div class="modal-box">
+            <h4>📂 Evidencia Destacada</h4>
+            <p>${mod.evidencias}</p>
+          </div>
+        </div>
+        <div class="modal-section">
+          <h4>🔗 Recursos para Seguir Aprendiendo</h4>
+          <div class="recursos-links">
+            ${mod.recursos.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${r.titulo} &#8599;</a>`).join('')}
+          </div>
+        </div>
+      `;
+
+      modal.showModal();
+    }
+
+    // Eventos para cerrar el modal
+    btnCerrar.addEventListener('click', () => modal.close());
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    // Carga inicial
+    renderizarModulos();
   </script>
 </body>
 </html>
