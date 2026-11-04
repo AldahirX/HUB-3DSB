@@ -14,7 +14,27 @@ const modulos = [
       { titulo: "Documentación Oficial de Power BI", url: "https://learn.microsoft.com/es-es/power-bi/" },
       { titulo: "Soporte Técnico de Microsoft", url: "https://support.microsoft.com/es-es" }
     ],
-    evidencias: "Instalación de Power BI, dashboards de monitoreo de mantenimiento y elaboración de plantillas SLA."
+    evidencias: "Instalación de Power BI, dashboards de monitoreo de mantenimiento y elaboración de plantillas SLA.",
+    quiz: [
+      {
+        pregunta: "¿Qué significa la sigla SLA en gestión de servicios de TI?",
+        opciones: ["Service Level Agreement", "System Logic Architecture", "Software Licensing Authorization", "Server Load Analysis"],
+        correcta: 0,
+        explicacion: "SLA (Service Level Agreement) es el acuerdo de nivel de servicio entre el proveedor de TI y el cliente."
+      },
+      {
+        pregunta: "¿Cuál es la función principal de Power BI en este módulo?",
+        opciones: ["Editar código en C#", "Crear dashboards visuales para monitorear datos", "Diseñar logotipos", "Gestionar redes locales"],
+        correcta: 1,
+        explicacion: "Power BI se utiliza para transformar datos en reportes interactivos y dashboards analíticos."
+      },
+      {
+        pregunta: "¿Qué objetivo tiene un plan de contingencia informático?",
+        opciones: ["Aumentar la velocidad de internet", "Garantizar la continuidad del sistema ante fallas", "Instalar antivirus gratuitos", "Formatear discos siempre"],
+        correcta: 1,
+        explicacion: "El plan de contingencia define las acciones a seguir para restaurar la operación del sistema ante emergencias o fallas."
+      }
+    ]
   },
   {
     id: "m33",
@@ -30,7 +50,27 @@ const modulos = [
       { titulo: "Documentación de MySQL", url: "https://dev.mysql.com/doc/" },
       { titulo: "W3Schools SQL Tutorial", url: "https://www.w3schools.com/sql/" }
     ],
-    evidencias: "Base de datos relacional normalizada con tablas vinculadas mediante llaves foráneas y diccionario de datos."
+    evidencias: "Base de datos relacional normalizada con tablas vinculadas mediante llaves foráneas y diccionario de datos.",
+    quiz: [
+      {
+        pregunta: "¿Cuál es la función de una Foreign Key (Llave Foránea)?",
+        opciones: ["Encriptar la base de datos", "Vincular dos tablas mediante la Primary Key de otra", "Acelerar las descargas de imágenes", "Crear copias de seguridad"],
+        correcta: 1,
+        explicacion: "La llave foránea (FK) garantiza la integridad referencial relacionando una fila de una tabla con la Primary Key de otra."
+      },
+      {
+        pregunta: "¿Qué comando SQL se utiliza para recuperar datos de una tabla?",
+        opciones: ["UPDATE", "INSERT", "SELECT", "DELETE"],
+        correcta: 2,
+        explicacion: "SELECT es el comando de DML utilizado para realizar consultas y filtrar información en SQL."
+      },
+      {
+        pregunta: "¿En qué consiste la primera forma normal (1FN)?",
+        opciones: ["Eliminar duplicados de tablas enteras", "Asegurar valores atómicos sin grupos repetidos", "Crear índices automáticos", "Usar solo texto en minúsculas"],
+        correcta: 1,
+        explicacion: "La 1FN exige que cada celda de la tabla contenga un solo valor atómico e indivisible."
+      }
+    ]
   },
   {
     id: "m34",
@@ -46,7 +86,27 @@ const modulos = [
       { titulo: "UML Org Docs", url: "https://www.uml.org/" },
       { titulo: "Guía de Markdown", url: "https://www.markdownguide.org/" }
     ],
-    evidencias: "Diccionario de datos completo y diagramas UML para la documentación del sistema informático."
+    evidencias: "Diccionario de datos completo y diagramas UML para la documentación del sistema informático.",
+    quiz: [
+      {
+        pregunta: "¿Para qué sirve un diagrama de Secuencia en UML?",
+        opciones: ["Mostrar el diseño gráfico de botones", "Representar el orden cronológico del intercambio de mensajes entre objetos", "Calcular el costo del proyecto", "Escribir consultas SQL"],
+        correcta: 1,
+        explicacion: "El diagrama de secuencia modela la interacción temporal y secuencial entre objetos o componentes."
+      },
+      {
+        pregunta: "¿Qué contiene un diccionario de datos?",
+        opciones: ["Traducciones de inglés a español", "Nombres de los programadores", "Definiciones detalladas de campos, tipos de datos y restricciones", "Historial de descargas"],
+        correcta: 2,
+        explicacion: "Un diccionario de datos describe las características, tipos de datos, longitud y reglas de cada atributo de las tablas."
+      },
+      {
+        pregunta: "¿Quién es el actor principal en un diagrama de Casos de Uso?",
+        opciones: ["La base de datos", "El usuario o sistema externo que interactúa con las funciones", "El procesador de la PC", "El lenguaje de programación"],
+        correcta: 1,
+        explicacion: "Un actor representa el rol que desempeña un usuario o sistema externo al ejecutar un caso de uso."
+      }
+    ]
   },
   {
     id: "m38",
@@ -62,7 +122,27 @@ const modulos = [
       { titulo: "Google AI Studio Docs", url: "https://ai.google.dev/docs" },
       { titulo: "React Documentation", url: "https://react.dev/" }
     ],
-    evidencias: "Manual de sistema, entregas periódicas del proyecto integrador y exposición final."
+    evidencias: "Manual de sistema, entregas periódicas del proyecto integrador y exposición final.",
+    quiz: [
+      {
+        pregunta: "¿Qué arquitectura permite conectar un frontend en React con un modelo de IA?",
+        opciones: ["API REST / Servicios Web", "Conexión directa por cable VGA", "Archivos TXT compartidos", "Servidor FTP sin autenticación"],
+        correcta: 0,
+        explicacion: "Una API REST permite enviar solicitudes HTTP desde el cliente frontend hacia el servidor backend que procesa la IA."
+      },
+      {
+        pregunta: "¿Qué significa RAG en aplicaciones modernas con IA?",
+        opciones: ["Rapid Application Graphics", "Retrieval-Augmented Generation", "Random Access Gateway", "Real-time Array Group"],
+        correcta: 1,
+        explicacion: "Retrieval-Augmented Generation combina búsqueda de información propia con modelos generativos de IA."
+      },
+      {
+        pregunta: "¿Cuál es el propósito del manual de sistema?",
+        opciones: ["Promocionar el software en redes sociales", "Documentar la arquitectura técnica, instalación y configuración para mantenedores", "Lista de precios de hardware", "Certificado de notas"],
+        correcta: 1,
+        explicacion: "El manual de sistema le permite a otros desarrolladores comprender la infraestructura interna y realizar mantenimiento."
+      }
+    ]
   },
 
   // --- Profesor Arcides Canales Sorto ---
@@ -80,7 +160,27 @@ const modulos = [
       { titulo: "Microsoft Learn C#", url: "https://learn.microsoft.com/es-es/dotnet/csharp/" },
       { titulo: "ASP.NET Core Razor Pages Docs", url: "https://learn.microsoft.com/es-es/aspnet/core/razor-pages/" }
     ],
-    evidencias: "Prácticas de POO (Herencia y Polimorfismo), gestor de acceso a datos y aplicación web Code First ASP Razor."
+    evidencias: "Prácticas de POO (Herencia y Polimorfismo), gestor de acceso a datos y aplicación web Code First ASP Razor.",
+    quiz: [
+      {
+        pregunta: "¿En qué consiste el Polimorfismo en POO?",
+        opciones: ["En duplicar código en todas las clases", "En permitir que métodos con el mismo nombre se comporten distinto según la clase", "En borrar la base de datos al cerrar", "En usar HTML dentro de C#"],
+        correcta: 1,
+        explicacion: "El polimorfismo permite responder a un mismo mensaje ejecutando comportamientos diferentes en subclases derivadas."
+      },
+      {
+        pregunta: "¿Qué caracteriza al enfoque Code First de Entity Framework?",
+        opciones: ["Se crea la base de datos manualmente antes de programar", "Se definen primero las clases en C# y EF genera la base de datos", "No se usa base de datos", "Solo sirve para celulares"],
+        correcta: 1,
+        explicacion: "Code First permite escribir modelos de clases en C# y migrar automáticamente la estructura hacia la base de datos."
+      },
+      {
+        pregunta: "¿Qué extensión usan las vistas dinámicas en ASP.NET Razor?",
+        opciones: [".cshtml", ".php", ".py", ".jsx"],
+        correcta: 0,
+        explicacion: "Las páginas Razor combinan C# y HTML dentro de archivos con extensión .cshtml."
+      }
+    ]
   },
   {
     id: "m_movil",
@@ -96,7 +196,27 @@ const modulos = [
       { titulo: "Documentación de .NET MAUI", url: "https://learn.microsoft.com/es-es/dotnet/maui/" },
       { titulo: "Android Developers", url: "https://developer.android.com/" }
     ],
-    evidencias: "Secuencia completa de prácticas móviles desarrolladas e instaladas en .NET MAUI."
+    evidencias: "Secuencia completa de prácticas móviles desarrolladas e instaladas en .NET MAUI.",
+    quiz: [
+      {
+        pregunta: "¿Para qué se utiliza el lenguaje XAML en .NET MAUI?",
+        opciones: ["Para configurar bases de datos", "Para definir y maquetar la interfaz gráfica de usuario", "Para conectar Wi-Fi", "Para escribir estilos CSS"],
+        correcta: 1,
+        explicacion: "XAML es un lenguaje basado en XML diseñado para declarar elementos visuales y layouts en aplicaciones .NET."
+      },
+      {
+        pregunta: "¿Qué significa la sigla MAUI en .NET?",
+        opciones: ["Multi-platform App UI", "Mobile Advanced User Integration", "Main Android Universal Interface", "Modern Application Unified System"],
+        correcta: 0,
+        explicacion: ".NET MAUI (Multi-platform App UI) permite crear apps nativas para Android, iOS, macOS y Windows desde un solo proyecto."
+      },
+      {
+        pregunta: "¿Cómo se llama el componente que permite organizar elementos vertical u horizontalmente?",
+        opciones: ["Grid / StackLayout", "CanvasSQL", "WebBrowser", "HttpButton"],
+        correcta: 0,
+        explicacion: "StackLayout y Grid son los contenedores de diseño principales para organizar vistas en .NET MAUI."
+      }
+    ]
   },
   {
     id: "m_ing",
@@ -112,7 +232,27 @@ const modulos = [
       { titulo: "Scrum Guide Official", url: "https://scrumguides.org/" },
       { titulo: "BBC Learning English", url: "https://www.bbc.co.uk/learningenglish" }
     ],
-    evidencias: "Práctica 10 sobre marco de trabajo Scrum y Práctica 11 con sistema CRUD enlazado a Inteligencia Artificial."
+    evidencias: "Práctica 10 sobre marco de trabajo Scrum y Práctica 11 con sistema CRUD enlazado a Inteligencia Artificial.",
+    quiz: [
+      {
+        pregunta: "¿Qué significa las siglas de las operaciones CRUD?",
+        opciones: ["Compile, Run, Undo, Delete", "Create, Read, Update, Delete", "Copy, Replace, Upload, Download", "Code, Refactor, Use, Deploy"],
+        correcta: 1,
+        explicacion: "CRUD representa las cuatro operaciones fundamentales sobre datos persistententes: Crear, Leer, Actualizar y Eliminar."
+      },
+      {
+        pregunta: "¿En qué consiste un 'Sprint' dentro del marco Scrum?",
+        opciones: ["Una carrera de atletismo", "Un ciclo de trabajo de tiempo fijo donde se entrega un incremento de software funcional", "Un examen oral en inglés", "Un reporte de virus"],
+        correcta: 1,
+        explicacion: "Un Sprint es un periodo de 1 a 4 semanas donde el equipo trabaja para completar las tareas comprometidas del backlog."
+      },
+      {
+        pregunta: "¿Cómo se llama la reunión diaria corta de sincronización en Scrum?",
+        opciones: ["Daily Standup / Daily Scrum", "Final Exam", "Sprint Review", "Project Closing"],
+        correcta: 0,
+        explicacion: "El Daily Scrum es una reunión de máximo 15 minutos para inspeccionar el progreso diario e identificar bloqueos."
+      }
+    ]
   },
   {
     id: "m_coop",
@@ -128,6 +268,26 @@ const modulos = [
       { titulo: "Odoo Documentation", url: "https://www.odoo.com/documentation" },
       { titulo: "Arduino Official Docs", url: "https://www.arduino.cc/en/Guide" }
     ],
-    evidencias: "Tienda de comercio electrónico PrestaShop, aplicación WinForms/ASPX, app .NET MAUI y proyecto tecnológico con Arduino."
+    evidencias: "Tienda de comercio electrónico PrestaShop, aplicación WinForms/ASPX, app .NET MAUI y proyecto tecnológico con Arduino.",
+    quiz: [
+      {
+        pregunta: "¿Qué tipo de solución tecnológica es PrestaShop?",
+        opciones: ["Un editor de imágenes", "Un gestor de contenidos e-commerce para tiendas virtuales", "Un sistema operativo", "Un lenguaje de base de datos"],
+        correcta: 1,
+        explicacion: "PrestaShop es una plataforma CMS de comercio electrónico en PHP utilizada para crear tiendas virtuales."
+      },
+      {
+        pregunta: "¿Qué plataforma de desarrollo de hardware libre se utilizó para el prototipo físico?",
+        opciones: ["Arduino", "Power BI", "Visual Studio Code", "Docker"],
+        correcta: 0,
+        explicacion: "Arduino integra microcontroladores y sensores programados desde su IDE en código C/C++."
+      },
+      {
+        pregunta: "¿Cuál es el valor porcentual de cada proyecto en la nota final del Módulo 4?",
+        opciones: ["10 %", "25 %", "50 %", "100 %"],
+        correcta: 1,
+        explicacion: "El módulo se dividió formalmente en 4 entregas del 25 % cada una (PrestaShop, MAUI, WinForms/ASPX y Arduino)."
+      }
+    ]
   }
 ];
