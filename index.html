@@ -33,6 +33,8 @@
   </header>
 
   <main class="wrap">
+    
+    <!-- SECCIÓN PRINCIPAL: MÓDULOS -->
     <section class="seccion">
       <h2>Módulos del Año</h2>
 
@@ -52,6 +54,90 @@
         <!-- Render dinámico desde JS -->
       </div>
     </section>
+
+    <!-- LÍNEA DE TIEMPO ÉPICA (UBICADA AL FINAL ANTES DEL FOOTER) -->
+   <!-- LÍNEA DE TIEMPO ÉPICA Y DETALLADA DEL AÑO ACADÉMICO -->
+    <section class="seccion timeline-section">
+      <h2>Línea de Tiempo Oficial · 3.º DS "B" (INDEL)</h2>
+      <p class="lead" style="margin-bottom: 24px; font-size: 15px;">Cronología basada en las entregas de Google Classroom y el desarrollo curricular del año.</p>
+      
+      <div class="timeline-container">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Febrero · Módulo 3.0</span>
+            <h3>Orientación y Conformación de Equipos</h3>
+            <p>Inicio del año escolar, establecimiento de generalidades del tercer año técnico, creación de equipos de trabajo y primer espacio para compartir códigos QR de organización.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Febrero – Mayo · BTVDS 3.1 & Módulo 3.2</span>
+            <h3>Bases, POO y Modelado UML</h3>
+            <p>Desarrollo de las primeras prácticas de POO (Herencia y Polimorfismo) en C#, estructuración de diagramas UML, planeación inicial de bases de datos y primeras investigaciones técnicas.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Marzo – Julio · Módulo 3.2</span>
+            <h3>Mantenimiento y Dashboards en Power BI</h3>
+            <p>Ejecución de actividades de monitoreo de sistemas, diseño de plantillas SLA, prácticas de Power BI y despliegue de planes de contingencia ante fallas informáticas.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Abril – Mayo · BTVDS 3.1</span>
+            <h3>Acceso a Datos y Code First (ASP.NET Razor)</h3>
+            <p>Prácticas avanzadas de conexión a bases de datos relacionales, implementación de Entity Framework con enfoque Code First y vistas dinámicas en ASP.NET Razor.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Junio – Agosto · Módulo 2</span>
+            <h3>Desarrollo de Componentes Móviles (.NET MAUI)</h3>
+            <p>Creación secuencial de interfaces móviles mediante XAML y lógica en C# (Prácticas 6 a 9), autoevaluación y gestión de componentes en Android Emulator.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Septiembre – Octubre · Módulo 3 & Módulo 4</span>
+            <h3>Metodología Scrum, Inglés y Proyectos de Asociatividad</h3>
+            <p>Prácticas de marcos de trabajo ágiles (Scrum), operaciones CRUD conectadas a IA, y las 4 grandes entregas evaluadas al 25%: E-commerce en PrestaShop, WinForms/ASPX, app móvil en MAUI y prototipo físico con Arduino.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Octubre – Noviembre · Módulo 3.8</span>
+            <h3>Proyecto Innovador y RAG (IA)</h3>
+            <p>Construcción de avances del proyecto (10% y 15%), integración del asistente inteligente institucional con Node.js, React y la API de Gemini bajo arquitectura RAG, y redacción del manual de sistema.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-badge">Noviembre · Cierre Oficial</span>
+            <h3>Lanzamiento y Feria de Portales (Versión 1.0)</h3>
+            <p>Publicación definitiva del portal web interactivo en GitHub Pages, quizes de repaso, coevaluación y defensa de los módulos ante los docentes.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- MODAL DE FICHA TÉCNICA Y QUIZ -->
@@ -62,7 +148,7 @@
       <!-- PESTAÑAS DENTRO DEL MODAL -->
       <div class="modal-tabs">
         <button class="tab-btn active" id="tab-ficha-btn">📄 Ficha del Módulo</button>
-        <button class="tab-btn" id="tab-quiz-btn">❓ Quiz de Repaso (3 preguntas)</button>
+        <button class="tab-btn" id="tab-quiz-btn">❓ Quiz de Repaso</button>
       </div>
 
       <!-- CONTENIDO PESTAÑA 1: FICHA -->
@@ -79,297 +165,11 @@
 
   <footer>
     <div class="wrap">
-      <p>Desarrollado para el repaso integral 3DS·B · Versión v0.4 Nivel Pro</p>
+      <p>Desarrollado para el repaso integral 3DS·B · Versión v1.0 Nivel Pro</p>
     </div>
   </footer>
 
   <script src="data/modulos.js"></script>
-  <script>
-    // --- ESTADO GLOBAL LOCALSTORAGE ---
-    let repasados = JSON.parse(localStorage.getItem('repasados_3dsb') || '[]');
-    let temaActual = localStorage.getItem('theme_3dsb') || 'dark';
-
-    // Elementos DOM
-    const bodyElement = document.body;
-    const btnTheme = document.getElementById('btn-theme');
-    const contenedor = document.getElementById('contenedor-modulos');
-    const inputBusqueda = document.getElementById('input-busqueda');
-    const botonesFiltro = document.querySelectorAll('.chip');
-    const txtProgreso = document.getElementById('txt-progreso');
-    const barraProgreso = document.getElementById('barra-progreso');
-    const btnResetProgreso = document.getElementById('btn-reset-progreso');
-
-    const modal = document.getElementById('modal-modulo');
-    const btnCerrar = document.getElementById('btn-cerrar-modal');
-    const tabFichaBtn = document.getElementById('tab-ficha-btn');
-    const tabQuizBtn = document.getElementById('tab-quiz-btn');
-    const tabFichaContent = document.getElementById('tab-ficha-content');
-    const tabQuizContent = document.getElementById('tab-quiz-content');
-
-    let filtroDocente = 'todos';
-    let textoBusqueda = '';
-    let moduloActivo = null;
-
-    // --- MODO CLARO / OSCURO ---
-    function aplicarTema(tema) {
-      if (tema === 'light') {
-        bodyElement.classList.remove('dark-theme');
-        bodyElement.classList.add('light-theme');
-        btnTheme.innerHTML = '☀️ Modo Claro';
-      } else {
-        bodyElement.classList.remove('light-theme');
-        bodyElement.classList.add('dark-theme');
-        btnTheme.innerHTML = '🌙 Modo Oscuro';
-      }
-      localStorage.setItem('theme_3dsb', tema);
-    }
-
-    btnTheme.addEventListener('click', () => {
-      temaActual = (temaActual === 'dark') ? 'light' : 'dark';
-      aplicarTema(temaActual);
-    });
-    aplicarTema(temaActual);
-
-    // --- PROGRESO EN LOCALSTORAGE ---
-    function actualizarProgresoUI() {
-      const total = modulos.length;
-      const completados = repasados.length;
-      const pct = Math.round((completados / total) * 100);
-
-      txtProgreso.textContent = `${completados} de ${total} módulos repasados (${pct}%)`;
-      barraProgreso.style.width = `${pct}%`;
-    }
-
-    function toggleRepasado(id, event) {
-      if (event) event.stopPropagation();
-
-      if (repasados.includes(id)) {
-        repasados = repasados.filter(item => item !== id);
-      } else {
-        repasados.push(id);
-      }
-      localStorage.setItem('repasados_3dsb', JSON.stringify(repasados));
-      actualizarProgresoUI();
-      renderizarModulos();
-
-      if (moduloActivo && moduloActivo.id === id) {
-        renderFichaModal(moduloActivo);
-      }
-    }
-
-    btnResetProgreso.addEventListener('click', () => {
-      if (confirm('¿Deseas reiniciar tu progreso de repaso?')) {
-        repasados = [];
-        localStorage.setItem('repasados_3dsb', JSON.stringify(repasados));
-        actualizarProgresoUI();
-        renderizarModulos();
-      }
-    });
-
-    // --- RENDERIZAR TARJETAS ---
-    function renderizarModulos() {
-      contenedor.innerHTML = '';
-
-      const filtrados = modulos.filter(mod => {
-        const esRepasado = repasados.includes(mod.id);
-        
-        let coincideDocente = true;
-        if (filtroDocente === 'Javier') coincideDocente = mod.docente.toLowerCase().includes('javier');
-        if (filtroDocente === 'Arcides') coincideDocente = mod.docente.toLowerCase().includes('arcides');
-        if (filtroDocente === 'repasados') coincideDocente = esRepasado;
-
-        const coincideTexto = mod.nombre.toLowerCase().includes(textoBusqueda) ||
-                              mod.codigo.toLowerCase().includes(textoBusqueda) ||
-                              mod.descripcion.toLowerCase().includes(textoBusqueda) ||
-                              mod.docente.toLowerCase().includes(textoBusqueda);
-
-        return coincideDocente && coincideTexto;
-      });
-
-      if (filtrados.length === 0) {
-        contenedor.innerHTML = `<p class="sin-resultados">No se encontraron módulos que coincidan con los filtros aplicados.</p>`;
-        return;
-      }
-
-      filtrados.forEach(mod => {
-        const esRepasado = repasados.includes(mod.id);
-        const card = document.createElement('article');
-        card.className = `card-modulo ${esRepasado ? 'card-repasado' : ''}`;
-        card.onclick = () => abrirModal(mod.id);
-
-        card.innerHTML = `
-          <div class="card-header-top">
-            <span class="badge">${mod.codigo}</span>
-            <button class="btn-check ${esRepasado ? 'check-active' : ''}" 
-                    title="${esRepasado ? 'Marcado como repasado' : 'Marcar como repasado'}"
-                    onclick="toggleRepasado('${mod.id}', event)">
-              ${esRepasado ? '✔ Repasado' : '○ Por repasar'}
-            </button>
-          </div>
-          <h3>${mod.nombre}</h3>
-          <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
-          <p class="desc">${mod.descripcion}</p>
-          <span class="btn-ver-ficha">Ver Ficha y Quiz &rarr;</span>
-        `;
-        contenedor.appendChild(card);
-      });
-    }
-
-    inputBusqueda.addEventListener('input', (e) => {
-      textoBusqueda = e.target.value.toLowerCase().trim();
-      renderizarModulos();
-    });
-
-    botonesFiltro.forEach(btn => {
-      btn.addEventListener('click', () => {
-        botonesFiltro.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        filtroDocente = btn.getAttribute('data-filtro');
-        renderizarModulos();
-      });
-    });
-
-    // --- MODAL Y TABS ---
-    function abrirModal(id) {
-      moduloActivo = modulos.find(m => m.id === id);
-      if (!moduloActivo) return;
-
-      // Reset pestañas
-      tabFichaBtn.classList.add('active');
-      tabQuizBtn.classList.remove('active');
-      tabFichaContent.classList.add('active');
-      tabQuizContent.classList.remove('active');
-
-      renderFichaModal(moduloActivo);
-      renderQuizModal(moduloActivo);
-
-      modal.showModal();
-    }
-
-    tabFichaBtn.addEventListener('click', () => {
-      tabFichaBtn.classList.add('active');
-      tabQuizBtn.classList.remove('active');
-      tabFichaContent.classList.add('active');
-      tabQuizContent.classList.remove('active');
-    });
-
-    tabQuizBtn.addEventListener('click', () => {
-      tabQuizBtn.classList.add('active');
-      tabFichaBtn.classList.remove('active');
-      tabQuizContent.classList.add('active');
-      tabFichaContent.classList.remove('active');
-    });
-
-    function renderFichaModal(mod) {
-      const esRepasado = repasados.includes(mod.id);
-      tabFichaContent.innerHTML = `
-        <div class="modal-header">
-          <div class="card-header-top">
-            <span class="badge">${mod.codigo}</span>
-            <button class="btn-check ${esRepasado ? 'check-active' : ''}" onclick="toggleRepasado('${mod.id}', event)">
-              ${esRepasado ? '✔ Repasado' : '○ Marcar como repasado'}
-            </button>
-          </div>
-          <h2>${mod.nombre}</h2>
-          <p class="docente"><strong>Docente:</strong> ${mod.docente}</p>
-        </div>
-        <div class="modal-section">
-          <h4>Resumen de lo Aprendido</h4>
-          <p>${mod.resumen}</p>
-        </div>
-        <div class="modal-grid">
-          <div class="modal-box">
-            <h4>📋 Instrumentos Evaluativos</h4>
-            <ul>${mod.instrumentos.map(i => `<li>${i}</li>`).join('')}</ul>
-          </div>
-          <div class="modal-box">
-            <h4>💻 Programas e Instalables</h4>
-            <ul>${mod.programas.map(p => `<li>${p}</li>`).join('')}</ul>
-          </div>
-          <div class="modal-box">
-            <h4>🛠️ Herramientas y Lenguajes</h4>
-            <ul>${mod.herramientas.map(h => `<li>${h}</li>`).join('')}</ul>
-          </div>
-          <div class="modal-box">
-            <h4>📂 Evidencia Destacada</h4>
-            <p>${mod.evidencias}</p>
-          </div>
-        </div>
-        <div class="modal-section">
-          <h4>🔗 Recursos para Seguir Aprendiendo</h4>
-          <div class="recursos-links">
-            ${mod.recursos.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${r.titulo} &#8599;</a>`).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    function renderQuizModal(mod) {
-      if (!mod.quiz || mod.quiz.length === 0) {
-        tabQuizContent.innerHTML = `<p class="sin-resultados">No hay preguntas de quiz disponibles para este módulo.</p>`;
-        return;
-      }
-
-      let html = `<div class="quiz-container">
-        <h3>Quiz de Evaluación Rápida</h3>
-        <p class="desc">Responde las 3 preguntas para comprobar tus conocimientos sobre ${mod.codigo}.</p>`;
-
-      mod.quiz.forEach((q, qIndex) => {
-        html += `
-          <div class="quiz-card" id="quiz-q-${qIndex}">
-            <p class="quiz-pregunta"><strong>${qIndex + 1}.</strong> ${q.pregunta}</p>
-            <div class="quiz-opciones">
-              ${q.opciones.map((opt, oIndex) => `
-                <button class="quiz-opcion" onclick="responderQuiz(${qIndex}, ${oIndex})">
-                  ${opt}
-                </button>
-              `).join('')}
-            </div>
-            <div class="quiz-feedback" id="feedback-${qIndex}" style="display:none;"></div>
-          </div>
-        `;
-      });
-
-      html += `</div>`;
-      tabQuizContent.innerHTML = html;
-    }
-
-    // --- RETROALIMENTACIÓN INMEDIATA DEL QUIZ ---
-    window.responderQuiz = function(qIndex, oIndex) {
-      if (!moduloActivo || !moduloActivo.quiz) return;
-      const qData = moduloActivo.quiz[qIndex];
-      const quizCard = document.getElementById(`quiz-q-${qIndex}`);
-      const feedbackBox = document.getElementById(`feedback-${qIndex}`);
-      const botones = quizCard.querySelectorAll('.quiz-opcion');
-
-      // Bloquear botones después de responder
-      botones.forEach((btn, idx) => {
-        btn.disabled = true;
-        if (idx === qData.correcta) {
-          btn.classList.add('opcion-correcta');
-        } else if (idx === oIndex) {
-          btn.classList.add('opcion-incorrecta');
-        }
-      });
-
-      feedbackBox.style.display = 'block';
-      if (oIndex === qData.correcta) {
-        feedbackBox.className = 'quiz-feedback feedback-correcto';
-        feedbackBox.innerHTML = `<strong>¡Correcto! 🎉</strong> ${qData.explicacion}`;
-      } else {
-        feedbackBox.className = 'quiz-feedback feedback-incorrecto';
-        feedbackBox.innerHTML = `<strong>Incorrecto. ❌</strong> ${qData.explicacion}`;
-      }
-    };
-
-    btnCerrar.addEventListener('click', () => modal.close());
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.close();
-    });
-
-    // Carga Inicial
-    actualizarProgresoUI();
-    renderizarModulos();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

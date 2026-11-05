@@ -3,7 +3,7 @@ const modulos = [
   {
     id: "m32",
     codigo: "Módulo 3.2",
-    nombre: "Mantenimiento y aseguramiento de la operación del sistema informático",
+    nombre: "Mantenimiento y aseguramiento de la operación del sistema",
     docente: "Profesor Javier Arturo García Mineros",
     descripcion: "Monitoreo de mantenimiento, dashboards en Power BI, plantillas SLA y planes de contingencia.",
     resumen: "Ejecución de planes de contingencia, monitoreo y registro de mantenimiento, creación de dashboards analíticos en Power BI, acuerdos de nivel de servicio (SLA) y modelado UML.",
@@ -33,6 +33,18 @@ const modulos = [
         opciones: ["Aumentar la velocidad de internet", "Garantizar la continuidad del sistema ante fallas", "Instalar antivirus gratuitos", "Formatear discos siempre"],
         correcta: 1,
         explicacion: "El plan de contingencia define las acciones a seguir para restaurar la operación del sistema ante emergencias o fallas."
+      },
+      {
+        pregunta: "¿Qué proceso previo es indispensable antes de crear un Dashboard en Power BI?",
+        opciones: ["Comprar una licencia de Windows", "Limpieza, transformación y modelado de los datos (ETL)", "Programar el backend en PHP", "Instalar un servidor Apache"],
+        correcta: 1,
+        explicacion: "Antes de visualizar, los datos deben pasar por un proceso de Extracción, Transformación y Carga (ETL) usando Power Query."
+      },
+      {
+        pregunta: "¿Qué métrica es fundamental monitorear en el mantenimiento de servidores?",
+        opciones: ["Los likes en redes sociales", "El uso de CPU, memoria RAM y espacio en disco", "La resolución del monitor", "La cantidad de correos enviados"],
+        correcta: 1,
+        explicacion: "El monitoreo de recursos físicos (CPU, RAM, disco) permite anticipar caídas del sistema y planificar escalabilidad."
       }
     ]
   },
@@ -69,6 +81,18 @@ const modulos = [
         opciones: ["Eliminar duplicados de tablas enteras", "Asegurar valores atómicos sin grupos repetidos", "Crear índices automáticos", "Usar solo texto en minúsculas"],
         correcta: 1,
         explicacion: "La 1FN exige que cada celda de la tabla contenga un solo valor atómico e indivisible."
+      },
+      {
+        pregunta: "¿Qué componente de XAMPP permite gestionar bases de datos MySQL desde el navegador?",
+        opciones: ["Apache", "FileZilla", "phpMyAdmin", "Tomcat"],
+        correcta: 2,
+        explicacion: "phpMyAdmin es una herramienta escrita en PHP que ofrece una interfaz web para administrar MySQL/MariaDB."
+      },
+      {
+        pregunta: "¿Qué tipo de sentencias SQL pertenecen al grupo DDL (Data Definition Language)?",
+        opciones: ["SELECT, INSERT, UPDATE", "CREATE, ALTER, DROP", "GRANT, REVOKE", "COMMIT, ROLLBACK"],
+        correcta: 1,
+        explicacion: "DDL se usa para definir o modificar la estructura de la base de datos (crear, alterar o eliminar tablas)."
       }
     ]
   },
@@ -105,6 +129,18 @@ const modulos = [
         opciones: ["La base de datos", "El usuario o sistema externo que interactúa con las funciones", "El procesador de la PC", "El lenguaje de programación"],
         correcta: 1,
         explicacion: "Un actor representa el rol que desempeña un usuario o sistema externo al ejecutar un caso de uso."
+      },
+      {
+        pregunta: "¿Qué ventaja principal ofrece usar Markdown para documentar proyectos (ej. README)?",
+        opciones: ["Se autotraduce a otros idiomas", "Es texto plano ligero que se formatea fácilmente en HTML", "Reemplaza a los diagramas UML", "Ejecuta código JavaScript"],
+        correcta: 1,
+        explicacion: "Markdown permite estructurar documentos de forma rápida con texto plano, siendo el estándar en plataformas como GitHub."
+      },
+      {
+        pregunta: "¿Qué debe incluir obligatoriamente el Manual de Usuario de un software?",
+        opciones: ["El código fuente completo", "El modelo Entidad-Relación", "Instrucciones paso a paso de las funcionalidades orientadas al cliente", "El presupuesto del hardware"],
+        correcta: 2,
+        explicacion: "El manual de usuario está dirigido al cliente final y debe explicar cómo operar el software mediante pasos visuales."
       }
     ]
   },
@@ -114,15 +150,15 @@ const modulos = [
     nombre: "Proyecto innovador de Desarrollo de Software",
     docente: "Profesor Javier Arturo García Mineros",
     descripcion: "Desarrollo e integración de proyectos tecnológicos completos con soluciones emergentes e IA.",
-    resumen: "Desarrollo de proyectos de software innovadores con entregas progresivas de avances (10% y 15%), elaboración del manual de sistema y presentación/exposición final.",
-    instrumentos: ["Rúbrica de evaluación de avances de proyecto (10% y 15%)", "Guía de manual de sistema", "Lista de cotejo para exposición final"],
+    resumen: "Desarrollo de proyectos innovadores, integración de Gemini API con arquitectura RAG usando React, Tailwind CSS y Node.js.",
+    instrumentos: ["Rúbrica de evaluación de avances de proyecto", "Guía de manual de sistema", "Lista de cotejo para exposición final"],
     programas: ["Visual Studio Code", "Node.js", "Git / GitHub", "Postman"],
     herramientas: ["JavaScript", "Express.js", "React + Vite", "Tailwind CSS", "Gemini API"],
     recursos: [
       { titulo: "Google AI Studio Docs", url: "https://ai.google.dev/docs" },
       { titulo: "React Documentation", url: "https://react.dev/" }
     ],
-    evidencias: "Manual de sistema, entregas periódicas del proyecto integrador y exposición final.",
+    evidencias: "Proyecto integrador con React y Gemini API, entregas periódicas y manual de sistema.",
     quiz: [
       {
         pregunta: "¿Qué arquitectura permite conectar un frontend en React con un modelo de IA?",
@@ -134,13 +170,25 @@ const modulos = [
         pregunta: "¿Qué significa RAG en aplicaciones modernas con IA?",
         opciones: ["Rapid Application Graphics", "Retrieval-Augmented Generation", "Random Access Gateway", "Real-time Array Group"],
         correcta: 1,
-        explicacion: "Retrieval-Augmented Generation combina búsqueda de información propia con modelos generativos de IA."
+        explicacion: "Retrieval-Augmented Generation combina búsqueda de información propia con modelos generativos de IA para dar respuestas contextuales."
       },
       {
         pregunta: "¿Cuál es el propósito del manual de sistema?",
         opciones: ["Promocionar el software en redes sociales", "Documentar la arquitectura técnica, instalación y configuración para mantenedores", "Lista de precios de hardware", "Certificado de notas"],
         correcta: 1,
         explicacion: "El manual de sistema le permite a otros desarrolladores comprender la infraestructura interna y realizar mantenimiento."
+      },
+      {
+        pregunta: "¿Qué ventaja ofrece Vite sobre Create React App al iniciar un proyecto frontend?",
+        opciones: ["Viene con IA preinstalada", "Servidor de desarrollo ultra rápido gracias al uso de ES Modules nativos", "No requiere escribir código", "Usa Python en lugar de JavaScript"],
+        correcta: 1,
+        explicacion: "Vite es un bundler moderno que ofrece tiempos de carga y recarga (HMR) casi instantáneos en desarrollo."
+      },
+      {
+        pregunta: "¿Qué framework CSS se basa en clases de utilidad (utility-first) para estilar componentes directamente en el HTML?",
+        opciones: ["Bootstrap", "Materialize", "Tailwind CSS", "Sass"],
+        correcta: 2,
+        explicacion: "Tailwind CSS utiliza clases de bajo nivel (como flex, pt-4, text-center) para construir diseños a medida sin salir del HTML/JSX."
       }
     ]
   },
@@ -160,7 +208,7 @@ const modulos = [
       { titulo: "Microsoft Learn C#", url: "https://learn.microsoft.com/es-es/dotnet/csharp/" },
       { titulo: "ASP.NET Core Razor Pages Docs", url: "https://learn.microsoft.com/es-es/aspnet/core/razor-pages/" }
     ],
-    evidencias: "Prácticas de POO (Herencia y Polimorfismo), gestor de acceso a datos y aplicación web Code First ASP Razor.",
+    evidencias: "Prácticas de POO, gestor de acceso a datos y aplicación web Code First ASP Razor.",
     quiz: [
       {
         pregunta: "¿En qué consiste el Polimorfismo en POO?",
@@ -179,6 +227,18 @@ const modulos = [
         opciones: [".cshtml", ".php", ".py", ".jsx"],
         correcta: 0,
         explicacion: "Las páginas Razor combinan C# y HTML dentro de archivos con extensión .cshtml."
+      },
+      {
+        pregunta: "¿Cuál de los siguientes es un principio fundamental de la Programación Orientada a Objetos (POO)?",
+        opciones: ["Renderizado en servidor", "Herencia", "Uso de variables globales", "Programación lineal"],
+        correcta: 1,
+        explicacion: "La Herencia es un pilar de la POO que permite crear nuevas clases basadas en clases existentes, promoviendo la reutilización de código."
+      },
+      {
+        pregunta: "¿Qué patrón arquitectónico clásico divide la aplicación en Vistas, Controladores y Modelos?",
+        opciones: ["MVVM", "Singleton", "MVC (Model-View-Controller)", "Microservicios"],
+        correcta: 2,
+        explicacion: "MVC separa la lógica de negocio (Modelo), la interfaz de usuario (Vista) y el flujo de datos (Controlador)."
       }
     ]
   },
@@ -188,8 +248,8 @@ const modulos = [
     nombre: "Desarrollo de componentes para dispositivos móviles",
     docente: "Profesor Arcides Canales Sorto",
     descripcion: "Desarrollo de componentes de interfaz y lógica móvil con .NET MAUI.",
-    resumen: "Construcción de aplicaciones móviles dinámicas con .NET MAUI, maquetación de interfaces en XAML, desarrollo de prácticas progresivas (Prácticas 6 a 9) y guías de autoevaluación.",
-    instrumentos: ["Guías de Prácticas 6 a 9 de Net MAUI", "Instrumento de autoevaluación de Práctica 9", "Guía de nivelación o recuperación"],
+    resumen: "Construcción de aplicaciones móviles dinámicas con .NET MAUI, maquetación de interfaces en XAML, desarrollo de prácticas progresivas y guías de autoevaluación.",
+    instrumentos: ["Guías de Prácticas 6 a 9 de Net MAUI", "Instrumento de autoevaluación de Práctica 9", "Guía de nivelación"],
     programas: ["Visual Studio 2022", "Android Emulator", ".NET SDK"],
     herramientas: [".NET MAUI", "XAML", "C#", "Controles de Interfaz Móvil"],
     recursos: [
@@ -215,6 +275,18 @@ const modulos = [
         opciones: ["Grid / StackLayout", "CanvasSQL", "WebBrowser", "HttpButton"],
         correcta: 0,
         explicacion: "StackLayout y Grid son los contenedores de diseño principales para organizar vistas en .NET MAUI."
+      },
+      {
+        pregunta: "¿Qué archivo maneja la lógica detrás de la interfaz XAML en una página de MAUI?",
+        opciones: ["El archivo .css", "El archivo de 'Code-Behind' (.xaml.cs)", "El archivo MainActivity.java", "El archivo App.xml"],
+        correcta: 1,
+        explicacion: "El Code-Behind en C# (archivo .xaml.cs) maneja los eventos, clics de botones y la lógica asociada a la vista XAML."
+      },
+      {
+        pregunta: "¿Qué mecanismo de C# se usa frecuentemente en MAUI para ejecutar tareas sin congelar la interfaz?",
+        opciones: ["Bucles While infinitos", "Programación Asíncrona (async/await)", "Variables estáticas", "Comandos SQL directos"],
+        correcta: 1,
+        explicacion: "Usar async y await permite ejecutar tareas pesadas (como descargas) en segundo plano sin bloquear el hilo de la UI."
       }
     ]
   },
@@ -224,7 +296,7 @@ const modulos = [
     nombre: "Conversación de inglés sobre mantenimiento de sistemas informáticos",
     docente: "Profesor Arcides Canales Sorto",
     descripcion: "Metodología Agile Scrum e integración de bases de datos con operaciones CRUD e IA.",
-    resumen: "Aplicación de metodologías ágiles con Scrum, gestión de proyectos de desarrollo e integración de operaciones CRUD en bases de datos potenciadas con Inteligencia Artificial.",
+    resumen: "Aplicación de metodologías ágiles con Scrum, gestión de proyectos e integración de operaciones CRUD en bases de datos.",
     instrumentos: ["Guía de Práctica 10 (Scrum)", "Guía de Práctica 11 (Base de datos CRUD-IA)"],
     programas: ["Visual Studio Code / Visual Studio", "Git / GitHub", "Gestor de Base de Datos"],
     herramientas: ["Metodología Scrum", "Operaciones CRUD", "Integración de IA", "Vocabulario Técnico en Inglés"],
@@ -232,7 +304,7 @@ const modulos = [
       { titulo: "Scrum Guide Official", url: "https://scrumguides.org/" },
       { titulo: "BBC Learning English", url: "https://www.bbc.co.uk/learningenglish" }
     ],
-    evidencias: "Práctica 10 sobre marco de trabajo Scrum y Práctica 11 con sistema CRUD enlazado a Inteligencia Artificial.",
+    evidencias: "Práctica sobre marco de trabajo Scrum y Práctica 11 con sistema CRUD enlazado a IA.",
     quiz: [
       {
         pregunta: "¿Qué significa las siglas de las operaciones CRUD?",
@@ -242,7 +314,7 @@ const modulos = [
       },
       {
         pregunta: "¿En qué consiste un 'Sprint' dentro del marco Scrum?",
-        opciones: ["Una carrera de atletismo", "Un ciclo de trabajo de tiempo fijo donde se entrega un incremento de software funcional", "Un examen oral en inglés", "Un reporte de virus"],
+        opciones: ["Una carrera de atletismo", "Un ciclo de trabajo de tiempo fijo donde se entrega un incremento de software", "Un examen oral en inglés", "Un reporte de virus"],
         correcta: 1,
         explicacion: "Un Sprint es un periodo de 1 a 4 semanas donde el equipo trabaja para completar las tareas comprometidas del backlog."
       },
@@ -251,6 +323,18 @@ const modulos = [
         opciones: ["Daily Standup / Daily Scrum", "Final Exam", "Sprint Review", "Project Closing"],
         correcta: 0,
         explicacion: "El Daily Scrum es una reunión de máximo 15 minutos para inspeccionar el progreso diario e identificar bloqueos."
+      },
+      {
+        pregunta: "¿Cuál es el rol del 'Product Owner' en Scrum?",
+        opciones: ["Escribir todo el código del backend", "Maximizar el valor del producto y gestionar el Product Backlog", "Despedir a los desarrolladores", "Instalar los servidores físicos"],
+        correcta: 1,
+        explicacion: "El Product Owner representa al cliente y al negocio, siendo el único responsable de priorizar las tareas del Backlog."
+      },
+      {
+        pregunta: "¿Qué herramienta es fundamental para gestionar versiones de código de forma colaborativa?",
+        opciones: ["Microsoft Paint", "Git (y plataformas como GitHub)", "WinRAR", "Adobe Photoshop"],
+        correcta: 1,
+        explicacion: "Git es el sistema de control de versiones distribuido que permite a equipos ágiles trabajar en el mismo código simultáneamente."
       }
     ]
   },
@@ -260,15 +344,15 @@ const modulos = [
     nombre: "Puesta en marcha de la empresa en asociatividad cooperativa",
     docente: "Profesor Arcides Canales Sorto",
     descripcion: "Implementación de 4 proyectos evaluados al 25%: PrestaShop, .NET MAUI, WinForms/ASPX y Agustine-Arduino.",
-    resumen: "Desarrollo de proyectos tecnológicos integrales divididos en 4 evaluaciones del 25%: e-commerce con PrestaShop, sistema de escritorio y web con WinForms y ASPX, app móvil con .NET MAUI y prototipo físico con Arduino.",
-    instrumentos: ["Rúbrica de evaluación PrestaShop (25%)", "Rúbrica de Proyecto Final .NET MAUI (25%)", "Rúbrica de Proyecto WinForms y ASPX (25%)", "Rúbrica de Proyecto Agustine-Arduino (25%)"],
+    resumen: "Desarrollo de proyectos tecnológicos integrales divididos en 4 evaluaciones del 25%: e-commerce con PrestaShop, sistema de escritorio y web con WinForms, app móvil con .NET MAUI y prototipo físico con Arduino.",
+    instrumentos: ["Rúbrica de evaluación PrestaShop (25%)", "Rúbrica de Proyecto Final .NET MAUI (25%)", "Rúbrica de Proyecto WinForms (25%)", "Rúbrica de Proyecto Arduino (25%)"],
     programas: ["PrestaShop", "Visual Studio 2022", "Arduino IDE"],
     herramientas: ["PrestaShop / PHP", "C# WinForms", "ASP.NET (ASPX)", ".NET MAUI", "Arduino / C++"],
     recursos: [
       { titulo: "Odoo Documentation", url: "https://www.odoo.com/documentation" },
       { titulo: "Arduino Official Docs", url: "https://www.arduino.cc/en/Guide" }
     ],
-    evidencias: "Tienda de comercio electrónico PrestaShop, aplicación WinForms/ASPX, app .NET MAUI y proyecto tecnológico con Arduino.",
+    evidencias: "Tienda de comercio electrónico, aplicación WinForms/ASPX, app .NET MAUI y proyecto tecnológico con Arduino.",
     quiz: [
       {
         pregunta: "¿Qué tipo de solución tecnológica es PrestaShop?",
@@ -287,6 +371,18 @@ const modulos = [
         opciones: ["10 %", "25 %", "50 %", "100 %"],
         correcta: 1,
         explicacion: "El módulo se dividió formalmente en 4 entregas del 25 % cada una (PrestaShop, MAUI, WinForms/ASPX y Arduino)."
+      },
+      {
+        pregunta: "¿Qué lenguaje principal se utiliza para la lógica de negocio en una aplicación de Windows Forms (WinForms)?",
+        opciones: ["Python", "HTML", "C#", "SQL"],
+        correcta: 2,
+        explicacion: "WinForms utiliza C# o VB.NET para la lógica detrás de los componentes de la interfaz de escritorio en Windows."
+      },
+      {
+        pregunta: "¿Para qué sirve el método 'Setup()' en un script de Arduino?",
+        opciones: ["Para borrar la memoria del dispositivo", "Para inicializar variables, pines y configuraciones una sola vez al encender", "Para hacer un bucle infinito", "Para enviar un correo electrónico"],
+        correcta: 1,
+        explicacion: "En Arduino, setup() se ejecuta una única vez al arrancar, a diferencia de loop() que se repite infinitamente."
       }
     ]
   }
